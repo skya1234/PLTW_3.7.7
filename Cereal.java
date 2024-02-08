@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.*;  
 
@@ -12,21 +13,25 @@ private int fat;
 private int sodium;
 private double fiber;
 private double carbohydrates;
-private int potassium;
 private int sugar;
+private int potassium;
 private int vitamins;
 private int shelf;
 private double weight;
 private double cups;
 private double rating;
 
-public Cereal(String inputName) {
-    Scanner scan = new Scanner("Copy of Cereal.csv");
-    scan.useDelimiter(",");
-    while (scan.hasNext()) {
-        System.out.println(scan.next());
-    }
+private Object[] attributes = {name, type, calories, protein, fat, sodium, fiber, carbohydrates, 
+potassium, sugar, vitamins, shelf, weight, cups, rating};
 
+public Cereal(String fullInput) {
+    Scanner scan = new Scanner(fullInput);
+    scan.useDelimiter(",");
+    for (int i = 0; i < attributes.length; i++){
+        attributes[i] = scan.next();
+    }
+    System.out.println(Arrays.toString(attributes));
+    
 }
 
 
