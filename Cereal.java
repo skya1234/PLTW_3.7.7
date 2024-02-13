@@ -31,7 +31,6 @@ public Cereal(String fullInput) {
         attributes[i] = scan.next();
     }
     System.out.println(Arrays.toString(attributes));
-    
 }
 
 
