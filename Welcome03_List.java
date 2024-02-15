@@ -17,11 +17,25 @@ public class Welcome03_List {
       Scanner sc = new Scanner(System.in);
       System.out.println("Enter a state abbreviation: ");
       String state = sc.next();
+      System.out.println("Enter maximum latitude: ");
+      double latitude = sc.nextDouble();
       System.out.println("Stations in " + state);
-      for (WeatherStation ws : allstns) {
+      int totalInState = 0;
+      for (WeatherStation ws : allstns) {      
          if (ws.isLocatedInState(state)) {
+            totalInState += 1;
             System.out.println("  " + ws.getId() + ": " + ws.getName());
          }
+         
       }
+      System.out.println("Total in state: " + totalInState);
+
+      System.out.println("Stations below latitude");
+      for (WeatherStation station : allstns) {
+         if (station.getLat() < latitude) {
+            System.out.println("  " + station.getId() + ": " + station.getName());
+         }
+      }
+
    }
 }

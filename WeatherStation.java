@@ -17,6 +17,9 @@ public class WeatherStation {
       this.state = state;   
    }
    
+   public double getLat() {
+      return lat;
+   }
    /* Produce the id of this station */
    public String getId() { 
       return id;
